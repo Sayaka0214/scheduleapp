@@ -1,0 +1,32 @@
+<h3>スケジュール詳細</h3>
+
+<table>
+    <tr>
+        <th>タイトル</th>
+        <td><%= @schedule.title %></td>
+    </tr>
+    <tr>
+        <th>開始日</th>
+        <td><%= @schedule.start.strftime("%Y年%m月%d日") %></td>
+    </tr>
+    <tr>
+        <th>終了日</th>
+        <td><%= @schedule.end.strftime("%Y年%m月%d日") %></td>
+    </tr>
+    <tr>
+        <th>終日</th>
+        <td><%= @schedule.allday %></td>
+    </tr>
+    <tr>
+        <th>スケジュールメモ</th>
+        <td><%= @schedule.memo %></td>
+    </tr>
+</table>
+
+<div>
+    <ul>
+        <li><%= link_to "スケジュール一覧に戻る", schedules_index_path %></li>
+        <li><%= link_to "スケジュールを編集する", edit_schedule_path %></li>
+        <li><%= link_to "スケジュールを削除する", schedule_path, method: :delete %></li>
+    </ul>
+</div>
